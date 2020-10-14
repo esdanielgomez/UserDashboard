@@ -1,0 +1,88 @@
+﻿@viewModel UserDashboard.ViewModels.DefaultViewModel, UserDashboard
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+	<div class="main-panel">
+		<div class="">
+			<br />
+			<div class="container-fluid">
+				<div class="container-fluid">
+					<!--Navbar-->
+					<div class="card card-plain">
+						<div class="card-header card-header-primary">
+							<h3 class="card-title"><b>{{value: Title}}</b></h3>
+							<p class="card-category">
+								{{value: Subtitle}}
+							</p>
+						</div>
+
+					</div>
+					<!--Content-->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-12 col-md-6 col-sm-6">
+								<div class="card card-stats">
+									<div class="card-header card-header-success card-header-icon">
+										<div class="card-icon">
+											<i class="material-icons">account_box</i>
+										</div>
+										<p class="card-category"><b>Number of registered users</b></p>
+										<h2 class="card-title">
+											{{value: ContUsers}}
+										</h2>
+									</div>
+									<div class="card-footer">
+										<div class="stats">
+											<i class="material-icons text">info</i>
+											Number of users currently registered in the database.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--Table-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header card-header-primary">
+										<h4 class="card-title ">User List</h4>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive">
+											<dot:GridView DataSource="{value: Users}" class="table">
+												<Columns>
+
+													<dot:GridViewTextColumn ValueBinding="{value: Id}" HeaderText="ID" HeaderCssClass="text-primary" CssClass="text-primary" />
+													<dot:GridViewTextColumn ValueBinding="{value: Name}" HeaderText="Name" HeaderCssClass="text-primary" />
+													<dot:GridViewTextColumn ValueBinding="{value: Country}" HeaderText="Country" HeaderCssClass="text-primary" />
+													<dot:GridViewTextColumn ValueBinding="{value: City}" HeaderText="City" HeaderCssClass="text-primary" />
+													<dot:GridViewTextColumn ValueBinding="{value: Enrollmentdate}" HeaderText="Enrollment date" HeaderCssClass="text-primary" />
+
+													<dot:GridViewTemplateColumn>
+														<dot:RouteLink Text="" RouteName="Detail" Param-Id="{{value: Id}}" class="btn btn-primary btn-link btn-sm">
+															<i class="material-icons">visibility</i> Detail
+														</dot:RouteLink>
+													</dot:GridViewTemplateColumn>
+
+												</Columns>
+
+											</dot:GridView>
+
+								
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!--End Table-->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</dot:Content>
+
+

@@ -1,0 +1,132 @@
+﻿@viewModel UserDashboard.ViewModels.Operations.EditViewModel, UserDashboard
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <div class="main-panel">
+        <div class="">
+            <br />
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <!--Navbar-->
+                    <div class="card card-plain">
+                        <div class="card card-plain">
+                            <div class="card-header card-header-primary">
+                                <h3 class="card-title"><b>{{value: Title}}</b></h3>
+                                <p class="card-category">
+                                    {{value: Subtitle}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <!--End Navbar-->
+                        <!--Content-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header card-header-primary">
+                                        <h4 class="card-title">Form</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="">Enrrolment date</label>
+                                                        <dot:TextBox Text="{value: User.Enrollmentdate}" class="form-control" disabled="true" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group" Validator.Value="{value: User.Username}"
+                                                         Validator.InvalidCssClass="has-error"
+                                                         Validator.SetToolTipText="true">
+
+                                                        <label>Username</label>
+                                                        <dot:TextBox Text="{value: User.Username}" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group" Validator.Value="{value: User.Firstname}"
+                                                         Validator.InvalidCssClass="has-error"
+                                                         Validator.SetToolTipText="true">
+
+                                                        <label>Fist Name</label>
+                                                        <dot:TextBox Text="{value: User.Firstname}" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group" Validator.Value="{value: User.Lastname}"
+                                                         Validator.InvalidCssClass="has-error"
+                                                         Validator.SetToolTipText="true">
+
+                                                        <label>Last Name</label>
+                                                        <dot:TextBox Text="{value: User.Lastname}" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group" Validator.Value="{value: User.City}"
+                                                         Validator.InvalidCssClass="has-error"
+                                                         Validator.SetToolTipText="true">
+
+                                                        <label>City</label>
+                                                        <dot:TextBox Text="{value: User.City}" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group" Validator.Value="{value: User.Country}"
+                                                         Validator.InvalidCssClass="has-error"
+                                                         Validator.SetToolTipText="true">
+
+                                                        <label>Country</label>
+                                                        <dot:TextBox Text="{value: User.Country}" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group" Validator.Value="{value: User.Postalcode}"
+                                                         Validator.InvalidCssClass="has-error"
+                                                         Validator.SetToolTipText="true">
+
+                                                        <label>Postal Code</label>
+                                                        <dot:TextBox Text="{value: User.Postalcode}" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>About</label>
+                                                        <div class="form-group" Validator.Value="{value: User.About}"
+                                                             Validator.InvalidCssClass="has-error"
+                                                             Validator.SetToolTipText="true">
+
+                                                            <dot:TextBox Text="{value: User.About}" type="MultiLine" Rows="5" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <dot:Button Text="Update User" Click="{command: EditUser()}" class="btn btn-primary pull-right" />
+
+                                            <div class="clearfix"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+</dot:Content>
+
